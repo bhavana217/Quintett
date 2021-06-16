@@ -1,0 +1,9 @@
+Greetings from Quintet!!
+This is an email confirmation post of our telephonic conversation about you associating with Quintet for our forthcoming project on the contractual basis.
+PFB the details about the project.
+Name of the college: ${collegename}
+Remuneration: INR 3500/- per day incl of TDS
+No-of-days: ${days}
+Mode of training: ${mode} Training
+Date: ${startdate} to ${enddate}
+Food and Accomodation: ${food}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trainers</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="icon" type="image/png" href="https://www.genesistraining.in/images/logo.png"/>
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- Third party plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Name:</th>
+        <th>Email:</th>
+        <th>Domain:</th>
+        <th>Actions:</th>
+    </tr>
+    </thead>
+    {% for trainee in trainers %}
+    <tr>
+        <td>{{ trainee.name }}</td>
+        <td>{{ trainee.emailid }}</td>
+        <td>{{ trainee.domain }}</td>
+        <td>
+            <!--<a href="/edit/{{ trainee.id }}"><span class="btn btn-success">Edit</span></a>-->
+            <a href="/delete/{{trainee.id}}" >Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<center><a href="/" class="btn btn-success">Logout</a></center>
+</body>
+</html>

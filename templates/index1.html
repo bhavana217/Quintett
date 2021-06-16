@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+</head>
+<body>
+<form method='post' class="post-form" action="/trainer/">
+    {% csrf_token %}
+    <div class="container">
+        <nav class="navbar navbar-light bg-light">
+        <div class="container">
+        <a class="navbar-brand" href="#">
+        <img src="https://www.genesistraining.in/images/logo.png" alt="" width="40" height="50">
+            Quintet Training!!!
+        </a>
+        </div>
+        </nav>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+<!--                <h3>Enter Trainer Details</h3>-->
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-4">
+                {{ form.name }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Email_id</label>
+            <div class="col-sm-4">
+                {{ form.emailid }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Domain</label>
+            <div class="col-sm-4">
+                {{ form.domain }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Account Number</label>
+            <div class="col-sm-4">
+                {{ form.bank_acc_number }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">IFSC</label>
+            <div class="col-sm-4">
+                {{ form.IFSC }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">PAN</label>
+            <div class="col-sm-4">
+                {{ form.Pan }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Bank</label>
+            <div class="col-sm-4">
+                {{ form.Bank_name }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Location</label>
+            <div class="col-sm-4">
+                {{ form.Location }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+</head>
+<body bgcolor="#dddddd">
+<form method='POST' class="post-form" action="/user/">
+    {% csrf_token %}
+    <div class="container">
+        <br>
+        <nav class="navbar navbar-light bg-light">
+        <div class="container">
+        <a class="navbar-brand" href="#">
+        <img src="https://www.genesistraining.in/images/logo.png" alt="" width="40" height="50">
+            Quintet Training!!!
+        </a>
+        </div>
+        </nav>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+<!--                <h3>Enter Details</h3>-->
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-4">
+                {{ form.name }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">College_ID</label>
+            <div class="col-sm-4">
+                {{ form.collegeid }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">College_Name</label>
+            <div class="col-sm-4">
+                {{ form.collegename }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Email_id</label>
+            <div class="col-sm-4">
+                {{ form.emailid }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Domain</label>
+            <div class="col-sm-4">
+                <!--{{ form.domain }}-->
+                <select name="domain">
+                    <option value="default">------Domain------</option>
+<!--                    <option value="ML">Machine Learning</option>-->
+<!--                    <option value="IOT">IOT</option>-->
+<!--                    <option value="Python">Python</option>-->
+                    {% for domain1 in domains %}
+                    <option value='{{ domain1.domain}}'>{{domain1.domain}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Duration</label>
+            <div class="col-sm-4">
+                {{ form.duration }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Date Start</label>
+            <div class="col-sm-4">
+                <!--{{ form.datestart }}-->
+                <input type="date" name="datestart" id="datefield" placeholder="yyyy-mm-dd" value="" max="2030-12-31">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Date End</label>
+            <div class="col-sm-4">
+                <!--{{ form.dateend }}-->
+                <input type="date" name="dateend" placeholder="yyyy-mm-dd" value=""  max="2030-12-31">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Food & Accomodation</label>
+            <div class="col-sm-4">
+<!--                {{ form.food }}-->
+                <select name="food">
+                    <option value="Yes">YES</option>
+                    <option value="No">NO</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Training Mode</label>
+            <div class="col-sm-4">
+<!--                {{ form.training }}-->
+                <select name="training">
+                    <option value="Offline">Offline</option>
+                    <option value="Online">Online</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>
